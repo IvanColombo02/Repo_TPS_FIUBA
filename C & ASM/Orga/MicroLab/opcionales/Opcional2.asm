@@ -1,0 +1,16 @@
+SET R0, 0x08
+SET R3, 0x0C
+SET R4, 0x10
+
+JMPr R0
+
+R0:
+SET R1, 0xFF
+SET R2, 0x11
+
+R3:
+ADD R1, R2
+JCr R3
+
+R4:
+JMPr R4
