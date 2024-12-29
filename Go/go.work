@@ -1,0 +1,8 @@
+go 1.23.4
+
+use (
+	./Algoritmos
+	./Algoritmos/TP0
+	./Algoritmos/TP1
+	./Algoritmos/TP2
+)
