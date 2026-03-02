@@ -4,24 +4,24 @@ Sitio web de hostería.
 ## Integrantes
 
 #### Referente Docs
-- Lucas Mancini
+- [Lucas Mancini]()
 
 #### Referentes base de datos
-- Joaquín Basile
-- Lucas de la Peña
+- [Joaquín Basile](https://github.com/joacobasile)
+- [Lucas de la Peña](https://github.com/lucas-de-la-pena)
 
 #### Referentes Forms
-- Mateo Parrado
+- [Mateo Parrado](https://github.com/mparradoo)
 
 #### Referentes vistas
-- Melanie Belen Garcia Lapegna
-- Mirko Uriel Sáenz Valiente
+- [Melanie Belen Garcia Lapegna](github.com/Melaniegarcialapegna)
+- [Mirko Uriel Sáenz Valiente](github.com/mirkosaenz)
 - Ivan Colombo
 
 #### Referentes API
-- Tomas Ordorica
-- Jose Piñeiro Sanchez
-- Maxi Fittipaldi
+- [Tomas Ordorica]()
+- [Jose Piñeiro Sanchez]()
+- [Maxi Fittipaldi](https://github.com/Maxi-Fittipaldi)
 
 
 ## Ejecutar
