@@ -1,0 +1,262 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "system-ui", Arial, Helvetica, sans-serif}
+
+:root {
+	/* COLORS */
+	--white: #e9e9e9;
+	--gray: #333;
+  --brown: #382a2a;
+  --light-brown: #b89b9b;
+
+	/* RADII */
+	--button-radius: 0.7rem;
+
+	/* SIZES */
+	--max-width: 758px;
+	--max-height: 600px;
+
+	font-size: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+/* modificar para ajustar el titulo */
+h1 {
+  margin-top: 3%;
+	color:rgb(61, 37, 0);
+  border-radius: 15px;
+}
+
+.Titulo{
+  padding: 10px;
+  background-color: #e9e9e9;
+  border-radius: 15px;
+  margin-bottom: 3%;
+
+}
+body {
+	align-items: center;
+	background-color: var(--white);
+	background: url("../Imagenes/posada.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: grid;
+	height: 100vh;
+	place-items: center;
+}
+
+
+.container{
+  height: auto;
+  display: flex;
+  gap: 36px;
+  padding: 6px 24px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  border-radius: 12px;
+	color: rgb(59, 45, 45);
+}
+
+.container__form {
+	top: 0;
+	transition: all 0.6s ease-in-out;
+}
+
+.container--signin {
+	left: 0;
+	z-index: 2;
+}
+
+.container.right-panel-active .container--signin {
+	transform: translateX(100%);
+}
+
+.container--signup {
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .container--signup {
+	animation: show 0.6s;
+	opacity: 1;
+	z-index: 5;
+}
+
+.btn {
+	background-color: var(--brown);
+	background-image: linear-gradient(90deg, var(--brown) 0%, var(--light-brown) 74%);
+	border-radius: 20px;
+	border: 1px solid var(--black);
+	color: var(--white);
+	cursor: pointer;
+	font-size: 0.8rem;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+	padding: 0.9rem 4rem;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.btn:hover, .btn:active{
+	color: var(--brown);
+}
+
+.form > .btn {
+	margin-top: 1.5rem;
+}
+
+.btn:active {
+	transform: scale(0.95);
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.form {
+	background-color: var(--white);
+	display: flex;
+	flex-direction: column;
+}
+
+.input {
+	background-color: #fff;
+	border: none;
+	padding: 0.9rem 0.9rem;
+	margin: 0.5rem 0;
+	width: 100%;
+}
+
+@keyframes show {
+	0%,
+	49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+
+	50%,
+	100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.input-group {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 10px; /* Reducido el espacio entre grupos */
+}
+
+.input-group label {
+    flex: 1; /* Que ocupe el espacio disponible */
+    margin-right: 10px; /* Espacio a la derecha de la etiqueta */
+}
+
+.input-group input {
+    flex: 2; /* Que ocupe más espacio que la etiqueta */
+    width: 100%; /* Asegura que el campo de entrada llene el espacio restante */
+} 
+  html{
+    margin: 8px;
+  }
+  
+  .calendar{
+    display: none;
+    width: 250px;
+    border-radius: 12px;
+  }
+
+  .calendar_active{
+    display: block;
+  }
+  
+  .calendar__week,
+  .calendar__header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);  
+  }
+  
+  .calendar__week {
+    grid-auto-rows: 30px;
+    text-align: right;
+    background-color: white;
+  }
+
+  .calendar__week:last-child{
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  
+  .calendar__header {
+    grid-auto-rows: 30px;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(238, 235, 235);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border: 1px solid #e1e1e1;
+  }
+  
+  .calendar__day {
+    display: grid;
+    place-content: center;
+    color: green;
+  }
+  
+  .busy_day{
+    background-color: #ddc6bd;
+    color: white;
+  }
+  
+  .day{
+    color: #4e4e4e;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* COSMETIC STYLING */
+  
+  :root {
+    --red: #ED5454;
+    --blue: rgb(195, 195, 243);
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    margin: 0;
+  }
+  
+  main {
+    background-color: #FCFBFC;
+  }
+  
+  .calendar__header > div {
+    color: black;
+    font-size: 0.8em;
+  }
+  
+  .header-day:nth-child(7), .header-day:nth-child(6){
+    font-weight: bold;
+  }
+  
+  .calendar__day:last-child {
+    border-right: 0;
+  }
+
+  .calendario-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .page-title{
+    font-weight: bolder;
+  }
+
+a {
+  color: black;
+  text-decoration: none;
+}
