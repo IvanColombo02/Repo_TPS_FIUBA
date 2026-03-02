@@ -1,0 +1,108 @@
+@startuml
+
+
+        class Celda {
+            -ocupada: boolean
+            -incendiada: boolean
+            -hayDiamante: boolean
+            -fil: int
+            -col: int
+            -jugador: Jugador
+            -robot: Robot
+            +<<Create>> construir(int fil, int col): Celda
+            +eliminarDiamante(): void
+            +eliminarJugador(): void
+            +eliminarRobot(): void
+            +setDiamante(): void
+            +setJugador(Jugador jugador): void
+            +setRobot(Robot robot): void
+            +incendiar(): void
+            +getPersonaje(): Personaje
+            +hayJugador(): boolean
+            +hayRobot(): boolean
+            +getFil(): int
+            +getCol(): int
+            +estaIncendiada(): boolean
+            +estaOcupada(): boolean
+            +hayDiamante(): boolean
+        }
+
+        abstract class Personaje {
+            -imagen: Image
+            #<<Create>> construir(Image imagen): Personaje
+            +getImagen(): Image
+        }
+
+        class Jugador {
+            -RUTA_IMG: String
+            -teletransportacionesSegurasRestantes: int
+            -celdaJugador: Celda
+            +<<Create>> construir(): Jugador
+            +mover(Celda celda): void
+            +setCeldaJugador(Celda celda): void
+            +getTeletransportacionesSegurasRestantes(): int
+            +setTeletransportacionesSegurasRestantes(int cantTelSeg): void
+            +subTeletransportacionesSegurasRestantes(): void
+            +getPosFilaJugador(): int
+            +getPosColJugador(): int
+        }
+
+        abstract class Robot {
+            -cantidadDeMovimientos(): int
+            #<<Create>> construir(Image imagen, int cantidadDeMovimientos): Robot
+            +moverHaciaJugador(Tablero tablero): boolean
+            -moverUnPaso(Tablero tablero): boolean
+            -hallarNuevaPosicion(Tablero tablero): Point
+            -getPoints(Tablero tablero, int fil, int col): Point[]
+        }
+
+        class Robot1X {
+            -RUTA_IMG: String
+            +<<Create>> construir(): Robot1X
+        }
+
+        class Robot2X {
+            -RUTA_IMG: String
+            +<<Create>> construir(): Robot2X
+        }
+
+        class Tablero {
+            -matriz: Celda[][]
+            -jugador: Jugador
+            -celdasRobots: Map<Personaje, Celda>
+            -robotsEliminados: Set<Robot>
+            -cantDiamantes: int
+            +<<Create>> construir(int n, int m): Tablero
+            +moverJugador(int nuevasPosFila, int nuevaPosCol): void
+            +moverRobot(Robot robot, int posFilaNuevaRobot, int posColNuevaRobot): void
+            +eliminarRobot(Robot robot): boolean
+            +todosRobotsEliminados(): boolean
+            +esPosicionValida(int posFila, int posColumna): boolean
+            +robotFueEliminado(Robot robot): boolean
+            +hayDiamante(int posFilaNueva, int posColNueva): boolean
+            +esCeldaOcupada(int fila, int col): boolean
+            +esCeldaIncendiada(int fila, int col): boolean
+            +setJugador(Jugador jugador, int fil, int col): void
+            +setRobot(Robot robot, int fil, int col): void
+            +setDiamante(int fil, int col): void
+            +getCantidadDiamantes(): int
+            +getCelda(int fil, int col): Celda
+            +getPosFilJugador(): int
+            +getPosColJugador(): int
+            +getPosFilRobot(Robot robot): int
+            +getPosColRobot(Robot robot): int
+            +getCantFilas(): int
+            +getCantColumnas(): int
+            +getMatriz(): Celda[][]
+        }
+
+        Tablero "1" *-- "*" Celda: Tiene
+        Robot <|-- Robot2X
+        Robot <|-- Robot1X
+        Personaje <|-- Jugador
+        Personaje <|-- Robot
+        Tablero "1" *-- "1" Jugador: Tiene
+        Tablero "1" *-- "*" Robot: Tiene
+
+@enduml
+
